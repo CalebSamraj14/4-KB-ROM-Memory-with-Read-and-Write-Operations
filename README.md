@@ -27,7 +27,7 @@ Analyze the waveform to verify that the memory read and write operations work as
 Capture the waveform and include the simulation results in the final report. Verilog Code for 4KB ROM Memory with Read and Write Operations In this design, we will implement a 4KB ROM. Since ROM is typically read-only, we will simulate the behavior as if it's writable, but in actual hardware, ROM is typically pre-programmed.
 
 ## Verilog code for ROM
-
+```
 module rom_design(clk,rst,address,dataout);
 input clk,rst;
 input[2:0] address;
@@ -59,10 +59,10 @@ dataout=rom_design[address];
 end
 
 endmodule
-
+```
 
 ## Testbench code for ROM
-
+```
 module rom_design_tb;
 reg clk, rst;
 reg [2:0] address;
@@ -121,7 +121,7 @@ initial begin
 end
 
 endmodule
-
+```
 
 ## Output
 
@@ -155,7 +155,7 @@ Analyze the waveform to verify that the memory read and write operations work as
 Capture the waveform and include the simulation results in the final report. Verilog Code for RAM Memory with Read and Write Operations In this design, we will implement a RAM. 
 
 ## Verilog code for RAM
-
+```
 module ram(clk,rst,en,data_in,data_out,address);
 input clk,rst,en;
 input [11:0]address;
@@ -179,9 +179,9 @@ data_out <= mem[address];
 end
 endmodule
 
-
+```
 ## Testbench code for RAM
-
+```
 module rom_design_tb;
 reg clk, rst;
 reg [2:0] address;
@@ -240,7 +240,7 @@ initial begin
 end
 
 endmodule
-
+```
 
 ## Output
 
@@ -276,7 +276,7 @@ Analyze the waveform to verify that the FIFO operations work as expected. Save a
 Capture the waveform and include the simulation results in the final report.
 
 ## Verilog code for FIFO
-
+```
 module fifo_8 #(parameter depth = 8, data_width = 8)
   (input  clk, rst, 
    input    w_en, r_en,
@@ -313,10 +313,10 @@ assign full = (w_ptr + 1 == r_ptr);
 assign empty = (w_ptr == r_ptr);
 
 endmodule
-
+```
 
 ## Testbench code for FIFO
-
+```
 module fifo_8_tb;
 reg clk, rst;
 reg w_en, r_en;
@@ -401,7 +401,7 @@ initial begin
 end
 
 endmodule
-
+```
 
 ## Output
 
